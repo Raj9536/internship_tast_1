@@ -13,24 +13,9 @@ GitHub Actions
 
 DockerHub
 
-📁 Project Structure
-csharp
-Copy
-Edit
-internship_task_1/
-│
-├── Dockerfile
-├── docker-compose.yml
-├── .github/
-│   └── workflows/
-│       └── main.yml         # CI/CD Workflow file
-├── src/
-│   ├── App.js
-│   ├── App.test.js          # React Test File
-│   └── index.js
-├── public/
-├── README.md
-└── package.json
+![image](https://github.com/user-attachments/assets/cc193a6a-c6f3-4add-b030-9d4e95f93cde)
+
+
 🔄 CI/CD Workflow Steps
 The CI/CD pipeline defined in .github/workflows/main.yml includes the following:
 
@@ -77,9 +62,6 @@ Edit
 docker push <your-dockerhub-username>/internship-task1
 🌐 GitHub Actions CI/CD Logs
 All steps such as installation, build, test, Docker image creation, and push were performed automatically via GitHub Actions and are visible in the Actions tab of the GitHub repository (once pipeline executes correctly and secrets are configured).
-
-📸 Screenshots (if applicable)
-(Include any screenshots here if asked during submission or testing stage.)
 
 🔐 Secrets Used
 DOCKER_USERNAME
