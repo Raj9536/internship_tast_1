@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+🚀 Task 1: Automate Code Deployment Using CI/CD Pipeline (GitHub Actions)
+📌 Objective
+To automate the build and deployment process of a Node.js web application using GitHub Actions CI/CD pipeline.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🛠️ Tech Stack Used
+Node.js
 
-## Available Scripts
+React
 
-In the project directory, you can run:
+Docker
 
-### `npm start`
+GitHub Actions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+DockerHub
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+📁 Project Structure
+csharp
+Copy
+Edit
+internship_task_1/
+│
+├── Dockerfile
+├── docker-compose.yml
+├── .github/
+│   └── workflows/
+│       └── main.yml         # CI/CD Workflow file
+├── src/
+│   ├── App.js
+│   ├── App.test.js          # React Test File
+│   └── index.js
+├── public/
+├── README.md
+└── package.json
+🔄 CI/CD Workflow Steps
+The CI/CD pipeline defined in .github/workflows/main.yml includes the following:
 
-### `npm test`
+Trigger: On push to the main branch
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Jobs:
 
-### `npm run build`
+Build the React app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Test the application using npm test
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Dockerize the app using a Dockerfile
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Push the image to DockerHub
 
-### `npm run eject`
+✅ Test Case Result
+A basic test exists in App.test.js to ensure that the React app renders properly.
+You can run the test locally with:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copy
+Edit
+npm test
+The test checks for a Learn React text, which might require an update if you've changed the homepage message.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🐳 Docker Commands Used
+Build Docker Image:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+bash
+Copy
+Edit
+docker build -t <your-dockerhub-username>/internship-task1 .
+Run the Container Locally:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+bash
+Copy
+Edit
+docker run -p 3000:3000 <your-dockerhub-username>/internship-task1
+Push Image to DockerHub:
 
-## Learn More
+bash
+Copy
+Edit
+docker push <your-dockerhub-username>/internship-task1
+🌐 GitHub Actions CI/CD Logs
+All steps such as installation, build, test, Docker image creation, and push were performed automatically via GitHub Actions and are visible in the Actions tab of the GitHub repository (once pipeline executes correctly and secrets are configured).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+📸 Screenshots (if applicable)
+(Include any screenshots here if asked during submission or testing stage.)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🔐 Secrets Used
+DOCKER_USERNAME
 
-### Code Splitting
+DOCKER_PASSWORD
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+These are securely added to the GitHub repository under Settings → Secrets and Variables → Actions.
 
-### Analyzing the Bundle Size
+📌 Learning Outcomes
+Understood how CI/CD automation works end-to-end.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Learned how GitHub Actions runners execute workflows.
 
-### Making a Progressive Web App
+Gained hands-on with Docker image creation and deployment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Practiced writing test cases in a React app.
